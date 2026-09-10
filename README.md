@@ -19,5 +19,5 @@ swift run threadlight --calendar "CALENDAR-ID" --calendar "ANOTHER-ID"
 ```
 
 The first EventKit command asks for Calendar access and prints titles with their
-identifiers. Calendar selection applies to that run. See `LEARNING_PLAN.md` for
-the guided validation.
+identifiers. Calendar selection applies to that run. Beginner lessons live in
+`teach/`.
