@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Read Threadlight types</title><link rel="stylesheet" href="../assets/site.css"></head><body><main><nav><a href="../index.html">← All lessons</a></nav><p class="eyebrow">Issue #12 · Lesson 2</p><h1>Read your first Swift types</h1><p><strong>Win:</strong> read three Swift shapes in PR #21 without needing to write Swift.</p><h2>A struct holds related values</h2><pre><code>public struct SourceObservation {
+    public let title: String
+    public let startsAt: Date
+    public let endsAt: Date
+    public let evidenceLink: URL
+}</code></pre><p>This resembles a frozen Python dataclass. <code>let</code> means the property cannot be reassigned after creation. The text after <code>:</code> is its type.</p><h2>An enum limits the possible answers</h2><pre><code>public enum BriefRunOutcome: String {
+    case retrieved
+    case completed
+    case notCompleted = "not completed"
+}</code></pre><p>Instead of accepting any string, Threadlight permits exactly three outcomes. That makes impossible spellings unrepresentable.</p><h2>A protocol describes a capability</h2><pre><code>public protocol SourceAdapter: AnyObject {
+    func observations(in window: DateInterval) -&gt; SourceReport
+}</code></pre><p>A protocol is close to a Python <code>Protocol</code>: it says what an object must do without saying how. Tests provide a controlled adapter; production provides EventKit.</p><h2>Retrieval</h2><p>Which shape—struct, enum, or protocol—best answers each question?</p><ol><li>What information belongs to one event?</li><li>Which run outcomes are legal?</li><li>What must every Calendar reader be able to do?</li></ol><details><summary>Reveal answer</summary><p>1: struct. 2: enum. 3: protocol.</p></details><p>Primary sources: <a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/classesandstructures/">structures</a>, <a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/enumerations/">enumerations</a>, and <a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/">protocols</a>.</p><p class="next"><a href="0003-follow-a-calendar-event.html">Next: follow one Calendar event →</a><br>Ask your coding agent to translate another snippet line by line if needed.</p></main></body></html>
